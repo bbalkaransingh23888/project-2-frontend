@@ -14,6 +14,8 @@ const $ul = $("ul");
 
 //FUNCTIONS
 
+
+
 //GET Quotes from API and populate
 
 //GET Movies from API and populate
