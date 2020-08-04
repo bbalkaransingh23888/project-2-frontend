@@ -1,4 +1,4 @@
-const deployedURL = first-app-bs23.herokuapp.com
+const deployedURL = "first-app-bs23.herokuapp.com"
 const URL = deployedURL ? deployedURL : "http://localhost:3000";
 
 
@@ -16,7 +16,7 @@ const $ul = $("ul");
 
 //GET Quotes from API and populate
 const getQuotes = async () => {
-    const response = await fetch(`${URL}/quotes`)
+    const response = await fetch(`${URL}/moviequotes/quotes`)
     const data = await response.json();
     //Populate selector with retrieved data
     data.forEach((quotes) => {
@@ -30,7 +30,7 @@ const getQuotes = async () => {
 //GET Movies from API and populate
 const getMovies = async () => {
     //get movies
-    const response = await fetch(`${URL}/movies`);
+    const response = await fetch(`${URL}moviequotes/movies`);
     const data = await response.json();
     console.log(data);
     data.forEach((Movies) => {
@@ -61,7 +61,7 @@ const createQuote = async (event) => {
       quote: $quoteSelect.val(),
     };
     //Send request to api to create rat
-    const response = await fetch(`${URL}/quotes`, {
+    const response = await fetch(`${URL}moviequotes/quotes`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -81,7 +81,7 @@ const createQuote = async (event) => {
 
 const deleteQuote = async (event) => {
     //make request to delete quote
-    const response = await fetch(`${URL}/quote/${event.target.id}`, {
+    const response = await fetch(`${URL}moviequotes/quote/${event.target.id}`, {
       method: "delete",
     });
     //update the dom
@@ -98,7 +98,7 @@ const updateQuote = async (event) => {
       name: $quoteEditInput.val(),
       pizza: $quoteEditSelect.val()
     }
-    const response = await fetch(`${URL}/quotes/${event.target.id}`, {
+    const response = await fetch(`${URL}/moviequotes/quotes/${event.target.id}`, {
       method: "put",
       headers: {
         "Content-Type": "application/json",
