@@ -36,6 +36,7 @@ const getQuotes = async () => {
             })
         );
         $ul.append($li);
+        console.log(response)
 });
 };
 
@@ -51,6 +52,7 @@ const getMovies = async () => {
         const $option2 = $("<option>").attr("value", movies._id).text(movies.title)
         $quoteEditSelect.append($option2);
     });
+    console.log(response)
 };
 
 //CREATE New Quote
@@ -82,7 +84,7 @@ const createQuote = async (event) => {
 
 const deleteQuote = async (event) => {
     //make request to delete quote
-    const response = await fetch(`${URL}moviequotes/quote/${event.target.id}`, {
+    const response = await fetch(`${URL}/moviequotes/quote/${event.target.id}`, {
       method: "delete",
     });
     //update the dom
@@ -122,8 +124,11 @@ getMovies();
 getQuotes();
 //add create function to button click
 $button.on("click", createQuote);
+//add delete function to button click
+//$button.on("click", deleteQuote) 
 //add Update function to edit submit button
 $editButton.on("click", updateQuote)
+
 
 
 

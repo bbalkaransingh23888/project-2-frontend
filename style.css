@@ -1,7 +1,6 @@
 * {
     color: gold;
     background-color: darkgrey;
-    border: 2px #dc143c solid;
 }
 h1 {
     color: #dc143c,
@@ -11,6 +10,32 @@ h2 {
     color: #dc143c,
 }
 
+.quotes {
+    font-size: 15px;
+}
+
+.form {
+    font-size: 15px;
+}
+
+button {
+    font-size: 18px;
+}
+
+
+@media (max-width: 500px) {
+    .quotes {
+        font-size: 30px;
+    }
+
+    .form {
+        font-size: 30px;
+    }
+
+    button {
+        font-size: 30px;
+    }
+}
 
 
 
