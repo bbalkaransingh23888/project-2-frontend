@@ -1,6 +1,7 @@
 * {
     color: gold;
     background-color: darkgrey;
+    border: 2px #dc143c solid;
 }
 h1 {
     color: #dc143c,
@@ -9,3 +10,11 @@ h1 {
 h2 {
     color: #dc143c,
 }
+
+
+
+
+
+/* #editor > * {
+    display: none;
+} */

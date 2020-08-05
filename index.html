@@ -7,22 +7,22 @@
         <script
       src="https://code.jquery.com/jquery-3.5.1.js"
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-      crossorigin="anonymous">
+      crossorigin="anonymous" defer>
     </script>
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
     <link rel="stylesheet" href="style.css" />
     </head>
     <body>
         <h1>Quotes Generator and Database</h1>
+        <h2>New Quote</h2>
         <div class="form">
-            <h2>New Quote</h2>
             <input type=text name=name id="createinput"/>
             <select name="quote" id="createselect">
             </select>
             <button id="createbutton">Submit</button>
         </div>
+        <h2>Edit Quote</h2>
         <div>
-            <h2>Edit Quote</h2>
             <input type=text name=name id="editinput"/>
             <select name="quote" id="editselect">
             </select>
