@@ -4,11 +4,13 @@ const URL = deployedURL ? deployedURL : "http://localhost:3000";
 
 //GLOBAL VARIABLES
 const $quoteInput = $("#createinputquote");
-const $quoteWhoSaid = $("#createinputwhosaid")
-const $quoteQuoteUse = $("#createinputquoteuse")
+const $quoteWhoSaid = $("#createinputwhosaid");
+const $quoteQuoteUse = $("#createinputquoteuse");
 const $quoteSelect = $("#createselect");
 const $button = $("#createbutton");
-const $quoteEditInput = $("#editinput");
+const $editQuoteInput = $("#editinputquote");
+const $editQuoteWhoSaid = $("#editinputwhosaid");
+const $editQuoteQuoteUse = $("#editinputquoteuse")
 const $quoteEditSelect = $("#editselect");
 const $editButton = $("#editbutton");
 const $ul = $(".quoteList");
@@ -29,6 +31,25 @@ const getQuotes = async () => {
         `${quote.quote} came from the movie ${quote.quoteSourceType.title}, directed by ${quote.quoteSourceType.director}, starring ${quote.quoteSourceType.actors}, and released in the year ${quote.quoteSourceType.releaseYear}`)
         $ul.append($li)
         }
+    //Populate selector with retrieved data
+    /*data.forEach((quotes) => {
+        const $li = $("<li>").text(
+            `${quotes.quote} came from the movie ${quotes.quoteSourceType.title}, directed by ${quotes.quoteSourceType.director}, starring ${quotes.quoteSourceType.actors}, and released in the year ${quotes.quoteSourceType.releaseYear}`
+        );
+        $li.append(
+            $("<button>").text("delete").attr("id", quotes._id).on("click", deleteQuote)
+        );
+
+        $li.append(
+            $("<button>").text("edit").on("click", (event) => {
+                $quoteEditInput.val(quotes.name);
+                $quoteEditSelect.val(quotes.quoteSourceType._id);
+                $editButton.attr("id", quotes._id)
+            })
+        );
+        $ul.append($li);
+        console.log(response)
+});*/
 };
 
 //GET Movies from API and populate
@@ -85,15 +106,14 @@ const deleteQuote = async (event) => {
     getQuotes();
   };
 
-//DELETE Movie?
-
 //UPDATE Quote
 
-/*const updateQuote = async (event) => {
+const updateQuote = async (event) => {
     const updatedQuote = {
-      quote: $quoteEditInput.val(),
-      whoSaid: $quoteEditSelect.val(),
-      quoteUse: $quoteEditSelect.val()
+      quote: $editQuoteInput.val(),
+      whoSaid: $editQuoteWhoSaid.val(),
+      quoteUse: $editQuoteQuoteUse.val(),
+      quoteSourceType: $quoteEditSelect.val()
     }
     const response = await fetch(`${URL}/moviequotes/quotes/${event.target.id}`, {
       method: "put",
@@ -105,7 +125,7 @@ const deleteQuote = async (event) => {
     //update the DOM
     $ul.empty();
     getQuotes();
-  }*/
+  }
 
 
 
@@ -118,9 +138,9 @@ getQuotes();
 //add create function to button click
 $button.on("click", createQuote);
 //add delete function to button click
-//$button.on("click", deleteQuote) 
+$button.on("click", deleteQuote) 
 //add Update function to edit submit button
-//$editButton.on("click", updateQuote)
+$editButton.on("click", updateQuote)
 
 
 
