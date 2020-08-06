@@ -40,7 +40,10 @@ const getQuotes = async () => {
 
       $li.append(
           $("<button>").text("edit").on("click", (event) => {
-              $editQuoteInput.val(quote.name);
+            console.log(quote)
+              $editQuoteInput.val(quote.quote);
+              $editQuoteWhoSaid.val(quote.whoSaid);
+              $editQuoteQuoteUse.val(quote.quoteUse);
               $quoteEditSelect.val(quote.quoteSourceType._id);
               $editButton.attr("id", quote._id)
           })
@@ -48,24 +51,6 @@ const getQuotes = async () => {
         $ul.append($li)
         }
     //Populate selector with retrieved data
-    /*data.forEach((quotes) => {
-        const $li = $("<li>").text(
-            `${quotes.quote} came from the movie ${quotes.quoteSourceType.title}, directed by ${quotes.quoteSourceType.director}, starring ${quotes.quoteSourceType.actors}, and released in the year ${quotes.quoteSourceType.releaseYear}`
-        );
-        $li.append(
-            $("<button>").text("delete").attr("id", quotes._id).on("click", deleteQuote)
-        );
-
-        $li.append(
-            $("<button>").text("edit").on("click", (event) => {
-                $quoteEditInput.val(quotes.name);
-                $quoteEditSelect.val(quotes.quoteSourceType._id);
-                $editButton.attr("id", quotes._id)
-            })
-        );
-        $ul.append($li);
-        console.log(response)
-});*/
 };
 
 //GET Movies from API and populate
@@ -137,12 +122,6 @@ const updateQuote = async (event) => {
       body: JSON.stringify(updatedQuote),
     })
     const data = response.json();
-    for (let i=0; i<data.length; i++) {
-      const quote = data[i]
-      console.log(quote)
-    $li.append(
-      $("<button>").text("update").attr("id", quote._id).on("click", updateQuote)
-    )}
     //update the DOM
     $ul.empty();
     getQuotes();
@@ -158,10 +137,10 @@ getMovies();
 getQuotes();
 //add create function to button click
 $button.on("click", createQuote);
-//add delete function to button click
-$button.on("click", deleteQuote) 
+
 //add Update function to edit submit button
-updateQuote()
+
+$editButton.on("click", updateQuote)
 
 
 
