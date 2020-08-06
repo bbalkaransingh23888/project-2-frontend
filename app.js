@@ -32,12 +32,14 @@ const getQuotes = async () => {
     //Populate selector with retrieved data
     for (let i=0; i<data.length; i++) {
       const quote = data[i]
+      //appends quote data grabbed from backend to the ul created to show the create functionality in frontend
       const $li = $("<li>").text(
         `${quote.quote} came from the movie ${quote.quoteSourceType.title}, directed by ${quote.quoteSourceType.director}, starring ${quote.quoteSourceType.actors}, and released in the year ${quote.quoteSourceType.releaseYear}`)
+        //creates delete button for each quote object
         $li.append(
           $("<button>").text("delete").attr("id", quote._id).on("click", deleteQuote)
       );
-
+        //creates edit button for each quote object - should populate respective fields in the Edit Quote form
       $li.append(
           $("<button>").text("edit").on("click", (event) => {
             console.log(quote)
@@ -59,6 +61,7 @@ const getMovies = async () => {
     const response = await fetch(`${URL}/moviequotes/movies`);
     const data = await response.json();
     data.forEach((movies) => {
+      //appends movies from backend database to my frontend dropdown menu
         const $option = $("<option>").attr("value", movies._id).text(movies.title)
         $quoteSelect.append($option);
         const $option2 = $("<option>").attr("value", movies._id).text(movies.title)
@@ -68,14 +71,14 @@ const getMovies = async () => {
 
 //CREATE New Quote
 const createQuote = async (event) => {
-    //Create to New Quote from Form Data
+    //Create New Quote from Form Data
     const newQuote = {
         quote: $quoteInput.val(),
         whoSaid: $quoteWhoSaid.val(),
         quoteUse: $quoteQuoteUse.val(),
         quoteSourceType: $quoteSelect.val(),
     };
-    //Send request to api to create rat
+    //Send request to API to create quote
     const response = await fetch(`${URL}/moviequotes/quotes`, {
       method: "post",
       headers: {
@@ -95,7 +98,7 @@ const createQuote = async (event) => {
 //DELETE Quote
 
 const deleteQuote = async (event) => {
-    //make request to delete quote
+    //make request to delete the quote object to the API
     const response = await fetch(`${URL}/moviequotes/quotes/${event.target.id}`, {
       method: "delete",
     });
@@ -107,13 +110,14 @@ const deleteQuote = async (event) => {
 //UPDATE Quote
 
 const updateQuote = async (event) => {
+  //Populates the respective fields for the Edit Quote form after clicking the edit button on the individual quote populated in the quote list
   const updatedQuote = {
       quote: $editQuoteInput.val(),
       whoSaid: $editQuoteWhoSaid.val(),
       quoteUse: $editQuoteQuoteUse.val(),
       quoteSourceType: $quoteEditSelect.val()
     } 
-    console.log(updatedQuote)
+    //Send request to API to update the quote object
     const response = await fetch(`${URL}/moviequotes/quotes/${event.target.id}`, {
       method: "put",
       headers: {
@@ -137,9 +141,7 @@ getMovies();
 getQuotes();
 //add create function to button click
 $button.on("click", createQuote);
-
 //add Update function to edit submit button
-
 $editButton.on("click", updateQuote)
 
 
