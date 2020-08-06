@@ -13,13 +13,27 @@
     <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <h1>Quotes Generator and Database</h1>
+        <h1 class="title">Quotes Generator and Database</h1>
+        <header>
+            <div class="hamburger-icon">
+                <div class="hamburger-content"></div>
+                <div class="hamburger-content"></div>
+            </div>
+            <nav style="display:none;">
+                <div class="navto">
+                    <a href="https://github.com/bbalkaransingh23888/project-2-frontend">Frontend Repo</a>
+                </div>
+                <div class="navto">
+                    <a href="https://github.com/bbalkaransingh23888/project-2-backend">Backend Repo</a>
+                </div>
+            </nav>
+        </header>
         <div class="quotes">
             <ul class="quoteList">
     
             </ul>
         </div>
-        <h2>New Quote</h2>
+        <h2 class="title">New Quote</h2>
         <div class="form">
             Quote<input type=text name=quote id="createinputquote"/>
             Who Said<input type=text name=whoSaid id="createinputwhosaid">
@@ -28,14 +42,14 @@
             </select>
             <button id="createbutton">Submit</button>
         </div>
-        <h2>Edit Quote</h2>
+        <h2 class="title">Edit Quote</h2>
         <div class="form">
             Quote<input type=text name=name id="editinputquote"/>
             Who Said<input type=text name=name id="editinputwhosaid"/>
             Quote Use<input type=text name=name id="editinputquoteuse"/>
             <select name="quote" id="editselect">
             </select>
-            <button id="editbutton">Submit</button>
+            <button class="editbutton">Submit</button>
         </div> 
     </body>
 </html>

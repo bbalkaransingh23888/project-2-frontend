@@ -1,39 +1,85 @@
 * {
-    color: gold;
     background-color: darkgrey;
 }
 h1 {
-    color: #dc143c,
+    color: #dc143c;
 }
 
 h2 {
-    color: #dc143c,
+    color: #dc143c;
 }
 
 .quotes {
     font-size: 15px;
+    color: gold;
 }
 
 .form {
     font-size: 15px;
+    color: gold;
+    background-color: darkgray;
 }
 
 button {
     font-size: 18px;
+    color: gold;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    align-items: flex-end;
+    background-color: var(--ultra-dark-color);
+    margin: 0; 
+}
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    color: white;
+    background-color: var(--ultra-dark-color);
+}
+.hamburger-icon {
+    justify-self: center;
+    padding: 10px;
+}
+.hamburger-content {
+    background-color: gold;
+    border-radius: 5px;
+    height: 5px;
+    width: 30px;
+    margin: 5px 0px 5px 5px;
+}
+.navto {
+    display: block;
+    margin: 5px 0px 5px 5px;
+    align-content: center;
+    font-size: 15px; 
+    font-family: sans-serif;
+}
+.navto > a {
+    color: gold;
+    display: block;
+    margin: 0 10px 0 0;
+    text-decoration: none;
 }
 
 
 @media (max-width: 500px) {
     .quotes {
         font-size: 30px;
+        color: gold;
     }
 
     .form {
         font-size: 30px;
+        color: gold;
     }
 
     button {
         font-size: 30px;
+        color: gold;
     }
 }
 
