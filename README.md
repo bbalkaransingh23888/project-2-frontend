@@ -45,12 +45,12 @@ MVP:
 |Responsive styling|Low|< 1 Hr.|< 1 Hr.|< 1 Hr.| 		
 |HTML and CSS|Low|< 1 Hr.|< 1 Hr.|< 1 Hr.| 		
 |Hamburger menu|Low|< 1 Hr.|< 1 Hr.|< 1 Hr.|
-|Read function for movies|Low|< 1 Hr.|<1 Hr.|<1 Hr.|		
+|Read function for movies|High|< 1 Hr.|<1 Hr.|<1 Hr.|		
 		
 
 Post-MVP:
 
 |Component|Difficulty|Est. Time|Time Invested|Actual Time|
 |---------|--------------------|---------|-------------|-----------|
-|Create on frontend for movies|Low|3 Hrs.|< 1 Hr.|< 1 Hr.|
+|Create function on frontend for movies|Low|3 Hrs.|< 1 Hr.|< 1 Hr.|
 
