@@ -15,10 +15,10 @@ I should be on line 3 on the Google sheet
 
 Wireframe:
 
-Wireframe: !['Wireframe (same for every type of device basically'](images/image4.jpeg)
+Wireframe: !['Wireframe (same for every type of device basically'](/Users/marilynbalkaransingh/Documents/project-2/image3.jpeg)
  
 
-Time-Priority Index: !['Time/Priority Index'](images/image1.jpeg)
+Time-Priority Index: !['Time/Priority Index'](/Users/marilynbalkaransingh/Documents/project-2/image4.jpeg)
  
 MVP list:
 1)	Full CRUD to create, read, update/edit, and delete a quote (an array of quotes really) all on the front end utilizing backend CRUD functions
