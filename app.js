@@ -123,9 +123,6 @@ const createMovie = async (event) => {
     const $option2 = $("<option>").attr("value", movies._id).text(movies.title)
     $quoteEditSelect.append($option2);
   });
-  //update the DOM
-  //$ul.empty();
-  //getMovies();
 };
 console.log(createMovie())
 //DELETE Quote
