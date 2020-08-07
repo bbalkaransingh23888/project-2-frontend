@@ -15,7 +15,7 @@ I should be on line 3 on the Google sheet
 
 Wireframe:
 
-Wireframe: !['Desktop Wireframe'](images/image4.jpeg)
+Wireframe: !['Wireframe (same for every type of device basically'](images/image4.jpeg)
  
 
 Time-Priority Index: !['Time/Priority Index'](images/image1.jpeg)
@@ -25,12 +25,13 @@ MVP list:
 2)	Deploy to netlify
 3)	Responsive styling
 4)	HTML and CSS
-5)	Hamburger menu 
+5)	Hamburger menu
+6)  Read function for movie model minimum  
 
 
 
 Post-MVP: 
-1)	Full CRUD for my movie on the frontend also 
+1)	Create function for my movie on the frontend also 
 
 
 Functional Components: 
@@ -43,12 +44,13 @@ MVP:
 |Deploy to netlify|Medium|< 1 Hr.|< 1 Hr.|< 1 Hr.| 		
 |Responsive styling|Low|< 1 Hr.|< 1 Hr.|< 1 Hr.| 		
 |HTML and CSS|Low|< 1 Hr.|< 1 Hr.|< 1 Hr.| 		
-|Hamburger menu|Low|< 1 Hr.|< 1 Hr.|< 1 Hr.|		
+|Hamburger menu|Low|< 1 Hr.|< 1 Hr.|< 1 Hr.|
+|Read function for movies|Low|< 1 Hr.|<1 Hr.|<1 Hr.|		
 		
 
 Post-MVP:
 
 |Component|Difficulty|Est. Time|Time Invested|Actual Time|
 |---------|--------------------|---------|-------------|-----------|
-|Full CRUD on frontend(quotes|Low|7 Hrs.|n/a|n/a|
+|Create on frontend for movies|Low|3 Hrs.|< 1 Hr.|< 1 Hr.|
 

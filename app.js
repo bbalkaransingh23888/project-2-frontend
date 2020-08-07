@@ -14,7 +14,12 @@ const $quoteInput = $("#createinputquote");
 const $quoteWhoSaid = $("#createinputwhosaid");
 const $quoteQuoteUse = $("#createinputquoteuse");
 const $quoteSelect = $("#createselect");
-const $button = $("#createbutton");
+const $movieTitleInput = $("#createMovieTitleInput");
+const $movieDirectorInput = $("#createMovieDirectorInput");
+const $movieActorsInput = $("#createMovieActorsInput");
+const $movieReleaseYearInput = $("#createMovieReleaseYearInput");
+const $button = $("#createQuote");
+const $button2 = $("#createMovie");
 const $editQuoteInput = $("#editinputquote");
 const $editQuoteWhoSaid = $("#editinputwhosaid");
 const $editQuoteQuoteUse = $("#editinputquoteuse")
@@ -76,7 +81,7 @@ const createQuote = async (event) => {
         quote: $quoteInput.val(),
         whoSaid: $quoteWhoSaid.val(),
         quoteUse: $quoteQuoteUse.val(),
-        quoteSourceType: $quoteSelect.val(),
+        quoteSourceType: $quoteSelect.val()
     };
     //Send request to API to create quote
     const response = await fetch(`${URL}/moviequotes/quotes`, {
@@ -92,9 +97,37 @@ const createQuote = async (event) => {
     getQuotes();
   };
 
+//CREATE New Movie
 
-//CREATE New Movie?
-
+const createMovie = async (event) => {
+  //Create New Movie from Form Data
+  const newMovie = {
+      title: $movieTitleInput.val(),
+      director: $movieDirectorInput.val(),
+      actors: $movieActorsInput.val(),
+      releaseYear: $movieReleaseYearInput.val()
+  };
+  //Send request to API to create movie
+  const response = await fetch(`${URL}/moviequotes/movies`, {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newMovie),
+  });
+  const data = response.json();
+  data.forEach((movies) => {
+    //appends newly created movie(s) from backend database after API request to my frontend dropdown menu
+    const $option = $("<option>").attr("value", movies._id).text(movies.title)
+    $quoteSelect.append($option);
+    const $option2 = $("<option>").attr("value", movies._id).text(movies.title)
+    $quoteEditSelect.append($option2);
+  });
+  //update the DOM
+  //$ul.empty();
+  //getMovies();
+};
+console.log(createMovie())
 //DELETE Quote
 
 const deleteQuote = async (event) => {
@@ -139,10 +172,12 @@ const updateQuote = async (event) => {
 getMovies();
 //initially get existing quotes
 getQuotes();
-//add create function to button click
+//add create quote function to button click
 $button.on("click", createQuote);
+//add create movie function to button click
+$button2.on("click", createMovie);
 //add Update function to edit submit button
-$editButton.on("click", updateQuote)
+$editButton.on("click", updateQuote);
 
 
 
