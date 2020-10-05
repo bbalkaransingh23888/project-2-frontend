@@ -7,8 +7,9 @@ This is the frontend portion for an app that allows a user to input a movie quot
 
 
 
-Project link: 
+Project links: 
 GitHub Repo: https://github.com/bbalkaransingh23888/project-2-frontend
+Backend Repo: https://github.com/bbalkaransingh23888/project-2-backend.git
 Google Sheet link: https://docs.google.com/spreadsheets/d/1DRhpnHYU-LVnRYKSALXm_xbMCZ3FsTs6Zl-VJ1MU49E/edit#gid=0
 I should be on line 3 on the Google sheet
 
