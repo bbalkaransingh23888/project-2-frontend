@@ -56,4 +56,5 @@ Post-MVP:
 |Component|Difficulty|Est. Time|Time Invested|Actual Time|
 |---------|--------------------|---------|-------------|-----------|
 |Create function on frontend for movies|Low|3 Hrs.|< 1 Hr.|< 1 Hr.|
+|Bootstrap|Medium||||
 
