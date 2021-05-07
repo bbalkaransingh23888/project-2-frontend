@@ -8,6 +8,9 @@ This is the frontend portion for an app that allows a user to input a movie quot
 
 
 Project links: 
+
+Site: https://bs23888firstappquotesgeneratoranddb.netlify.app/
+
 GitHub Repo: https://github.com/bbalkaransingh23888/project-2-frontend
 
 Backend Repo: https://github.com/bbalkaransingh23888/project-2-backend.git
