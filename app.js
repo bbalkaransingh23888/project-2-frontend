@@ -124,7 +124,8 @@ const createMovie = async (event) => {
     $quoteEditSelect.append($option2);
   });
 };
-console.log(createMovie())
+//console.log(createMovie())
+
 //DELETE Quote
 
 const deleteQuote = async (event) => {
