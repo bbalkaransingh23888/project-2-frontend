@@ -47,7 +47,7 @@ const getQuotes = async () => {
         //creates edit button for each quote object - should populate respective fields in the Edit Quote form
       $li.append(
           $("<button>").text("edit").on("click", (event) => {
-            console.log(quote)
+            //console.log(quote)
               $editQuoteInput.val(quote.quote);
               $editQuoteWhoSaid.val(quote.whoSaid);
               $editQuoteQuoteUse.val(quote.quoteUse);
